@@ -9,4 +9,7 @@ import lombok.Setter;
 @Setter
 @Table(name = "owner")
 public class Owner {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer ownerId;
 }
