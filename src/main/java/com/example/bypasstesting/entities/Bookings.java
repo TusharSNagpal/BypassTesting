@@ -2,12 +2,18 @@ package com.example.bypasstesting.entities;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "bookings")
 public class Bookings {
 
@@ -16,13 +22,7 @@ public class Bookings {
     private Integer bookingId;
 
     @Column(nullable = false)
-    private String propid;
-
-    @Column(nullable = false)
     private String prop_address;
-
-    @Column(nullable = false)
-    private String customer_id;
 
     @Column(nullable = false)
     private String vehicle_no;
@@ -35,4 +35,12 @@ public class Bookings {
 
     @Column(nullable = false)
     private String price;
+
+    @ManyToOne
+    @JoinColumn(name="customerId")
+    private Customer customer;
+
+    @OneToOne
+    @JoinColumn(name="prop_id")
+    private Property property;
 }

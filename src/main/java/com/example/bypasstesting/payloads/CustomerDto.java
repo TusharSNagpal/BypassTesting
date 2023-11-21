@@ -1,5 +1,6 @@
-package com.example.bypasstesting.entities;
+package com.example.bypasstesting.payloads;
 
+import com.example.bypasstesting.entities.Bookings;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,34 +9,17 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "customer")
-public class Customer {
+public class CustomerDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customerId;
-
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
     private String phone;
-
-    @Column(nullable = false)
     private String address;
-
-    @Column(nullable = false)
     private String pincode;
-
-    @Column(nullable = false)
     private String password;
-
-    @OneToMany
-    @JoinColumn(name="bookingId")
     private List<Bookings> bookingsList;
 }
