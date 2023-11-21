@@ -7,21 +7,22 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "owner")
-public class Owner {
+@Table(name = "properties")
+public class Properties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ownerId;
+    private Integer propertyId;
 
     @Column(nullable = false)
-    private String name;
+    private Integer slots;
 
     @Column(nullable = false)
-    private String phone;
+    private String propertyAddress;
 
     @Column(nullable = false)
-    private String address;
+    private Integer pincode;
 
-    @Column(nullable = false)
-    private String password;
+    @ManyToOne
+    @JoinColumn(name="ownerId")
+    private Owner owner;
 }
