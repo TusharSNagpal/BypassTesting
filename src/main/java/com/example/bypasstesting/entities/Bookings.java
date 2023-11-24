@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -25,13 +26,13 @@ public class Bookings {
     private String prop_address;
 
     @Column(nullable = false)
-    private String vehicle_no;
+    private String vehicle_reg_no;
 
     @Column(nullable = false)
-    private String in_date;
+    private Date in_date;
 
     @Column(nullable = false)
-    private String out_date;
+    private Date out_date;
 
     @Column(nullable = false)
     private String price;
