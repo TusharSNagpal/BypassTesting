@@ -33,7 +33,7 @@ public class OwnerController {
         return new ResponseEntity<>(ownerDto, HttpStatus.EXPECTATION_FAILED);
     }
 
-    @GetMapping("/{phone}")
+    @PostMapping("/{phone}")
     public ResponseEntity<OwnerDto> getOwner(@PathVariable String phone) {
         return ResponseEntity.ok(this.ownerService.getOwnerByPhone(phone));
     }
