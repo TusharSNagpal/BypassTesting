@@ -3,6 +3,7 @@ package com.example.bypasstesting.services.impl;
 import com.example.bypasstesting.entities.Owner;
 import com.example.bypasstesting.entities.Property;
 import com.example.bypasstesting.exceptions.ResourceNotFoundException;
+import com.example.bypasstesting.payloads.BookingsDto;
 import com.example.bypasstesting.payloads.OwnerDto;
 import com.example.bypasstesting.payloads.PropertyDto;
 import com.example.bypasstesting.repositories.OwnerRepo;
@@ -11,6 +12,9 @@ import com.example.bypasstesting.services.PropertyService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PropertyServiceImpl implements PropertyService {
@@ -36,9 +40,9 @@ public class PropertyServiceImpl implements PropertyService {
         return this.modelMapper.map(updatedProperty, PropertyDto.class);
     }
 
-    public PropertyDto searchProperty(Integer prop_id){
-        Property propertyFound = this.propertyRepo.findById(prop_id).orElseThrow(()->new ResourceNotFoundException("Property", "Property ID", prop_id));
-        return this.modelMapper.map(propertyFound, PropertyDto.class);
+    public List<PropertyDto> searchProperty(Integer ownerId){
+        List<Property> propertyFound = this.propertyRepo.findPropertyByOwnerId(ownerId);
+        return propertyFound.stream().map(properties -> this.modelMapper.map(properties, PropertyDto.class)).collect(Collectors.toList());
     }
 
     @Override

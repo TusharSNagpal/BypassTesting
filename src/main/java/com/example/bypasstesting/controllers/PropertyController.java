@@ -1,5 +1,6 @@
 package com.example.bypasstesting.controllers;
 
+import com.example.bypasstesting.exceptions.ResourceNotFoundException;
 import com.example.bypasstesting.payloads.Pincode;
 import com.example.bypasstesting.payloads.PropertyDto;
 import com.example.bypasstesting.services.PropertyService;
@@ -8,8 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/property")
+@RequestMapping("/api/properties")
 @CrossOrigin(origins = "*")
 public class PropertyController {
     @Autowired
@@ -32,10 +35,13 @@ public class PropertyController {
         return ResponseEntity.ok(this.propertyService.searchPropertyforCust(pincode.getPincode()));
     }
 
-//    @PostMapping("/{prop_id}")
-//    public ResponseEntity<PropertyDto> searchProperty(@PathVariable Integer prop_id) {
-//        return ResponseEntity.ok(this.propertyService.searchProperty(prop_id));
-//    }
+    @PostMapping("/get/{ownerId}")
+    public ResponseEntity<List<PropertyDto>> searchProperty(@PathVariable Integer ownerId) {
+        List<PropertyDto> propertyDto = this.propertyService.searchProperty(ownerId);
+        if(propertyDto != null)
+            return ResponseEntity.ok(propertyDto);
+        throw new ResourceNotFoundException("property", "OwnerId", 0);
+    }
 
     @DeleteMapping("/{prop_Id}")
     public void deleteProperty(@PathVariable Integer prop_Id) {
