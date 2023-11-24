@@ -7,7 +7,7 @@ public interface PropertyService {
 
     PropertyDto registerProperty(PropertyDto propertyDto);
 
-    PropertyDto updateProperty(PropertyDto propertyDto, Integer prop_id);
+    PropertyDto updateProperty(PropertyDto propertyDto);
 
     PropertyDto searchProperty(Integer prop_id);
 

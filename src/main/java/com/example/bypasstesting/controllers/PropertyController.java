@@ -1,5 +1,6 @@
 package com.example.bypasstesting.controllers;
 
+import com.example.bypasstesting.payloads.Pincode;
 import com.example.bypasstesting.payloads.PropertyDto;
 import com.example.bypasstesting.services.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/property")
 @CrossOrigin(origins = "*")
-
 public class PropertyController {
-
     @Autowired
     PropertyService propertyService;
 
@@ -22,21 +21,21 @@ public class PropertyController {
         return new ResponseEntity<>(createPropertyDto, HttpStatus.CREATED);
     }
 
-    @PostMapping("/{prop_Id}")
-    public ResponseEntity<PropertyDto> updateProperty(@RequestBody PropertyDto propertyDto, @PathVariable Integer prop_Id) {
-        PropertyDto updatedProperty = this.propertyService.updateProperty(propertyDto,prop_Id);
+    @PostMapping("/update")
+    public ResponseEntity<PropertyDto> updateProperty(@RequestBody PropertyDto propertyDto) {
+        PropertyDto updatedProperty = this.propertyService.updateProperty(propertyDto);
         return ResponseEntity.ok(updatedProperty);
     }
 
-    @PostMapping("/{pincode}")
-    public ResponseEntity<PropertyDto> searchPropertyforCust(@PathVariable Integer pincode) {
-        return ResponseEntity.ok(this.propertyService.searchPropertyforCust(pincode));
+    @PostMapping("/get")
+    public ResponseEntity<PropertyDto> searchPropertyforCust(@RequestBody Pincode pincode) {
+        return ResponseEntity.ok(this.propertyService.searchPropertyforCust(pincode.getPincode()));
     }
 
-    @PostMapping("/{prop_id}")
-    public ResponseEntity<PropertyDto> searchProperty(@PathVariable Integer prop_id) {
-        return ResponseEntity.ok(this.propertyService.searchProperty(prop_id));
-    }
+//    @PostMapping("/{prop_id}")
+//    public ResponseEntity<PropertyDto> searchProperty(@PathVariable Integer prop_id) {
+//        return ResponseEntity.ok(this.propertyService.searchProperty(prop_id));
+//    }
 
     @PostMapping("/{prop_Id}")
     public void deleteProperty(@PathVariable Integer prop_Id) {

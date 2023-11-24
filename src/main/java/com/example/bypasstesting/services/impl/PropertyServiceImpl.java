@@ -27,8 +27,8 @@ public class PropertyServiceImpl implements PropertyService {
     }
 
     @Override
-    public PropertyDto updateProperty(PropertyDto propertyDto, Integer prop_id){
-        Property property = this.propertyRepo.findById(prop_id).orElseThrow(()->new ResourceNotFoundException("Property", "Property ID", prop_id));
+    public PropertyDto updateProperty(PropertyDto propertyDto){
+        Property property = this.propertyRepo.findById(propertyDto.getProp_id()).orElseThrow(()->new ResourceNotFoundException("Property", "Property ID", propertyDto.getProp_id()));
         property.setSlots(propertyDto.getSlots());
         property.setProp_address(propertyDto.getProp_address());
         property.setPincode(propertyDto.getPincode());
