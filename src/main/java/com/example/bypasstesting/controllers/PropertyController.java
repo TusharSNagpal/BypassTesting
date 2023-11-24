@@ -27,7 +27,7 @@ public class PropertyController {
         return ResponseEntity.ok(updatedProperty);
     }
 
-    @PostMapping("/get")
+    @GetMapping("/get/{pincode}")
     public ResponseEntity<PropertyDto> searchPropertyforCust(@RequestBody Pincode pincode) {
         return ResponseEntity.ok(this.propertyService.searchPropertyforCust(pincode.getPincode()));
     }
@@ -37,7 +37,7 @@ public class PropertyController {
 //        return ResponseEntity.ok(this.propertyService.searchProperty(prop_id));
 //    }
 
-    @PostMapping("/{prop_Id}")
+    @DeleteMapping("/{prop_Id}")
     public void deleteProperty(@PathVariable Integer prop_Id) {
         this.propertyService.deleteProperty(prop_Id);
     }
