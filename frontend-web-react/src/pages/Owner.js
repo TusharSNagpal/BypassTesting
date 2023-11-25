@@ -92,6 +92,7 @@ function Owner() {
           <div className='form-group'>
             <input
               type='tel'
+              pattern='[1-9][0-9]{9}'
               className='form-control'
               id='phone'
               name='phone'

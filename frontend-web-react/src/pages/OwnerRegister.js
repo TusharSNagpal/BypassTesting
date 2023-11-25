@@ -4,6 +4,7 @@ import {FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
+import validator from 'validator'
 
 const API_URL = 'http://localhost:9090/api/owner/';
 
@@ -66,6 +67,30 @@ function OwnerRegister() {
         }
     })
   }
+
+  const validation = (key, value) => {
+    if(key === 'name'){
+      return value.match('[A-Za-z ]{1,32}');
+    }
+    else if(key === 'phone'){
+      return value.match('[1-9][0-9]{9}');
+    }
+    else if(key === 'password'){
+      if(validator.isStrongPassword(value, {
+        minLength: 8, 
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1
+      })){
+        return [value];
+      }
+      else{
+        return null;
+      }
+    }
+  }
+
   return (
     <>
     <Header></Header>
@@ -121,7 +146,7 @@ function OwnerRegister() {
           </div>
         </form>
         <div className='form-group'>
-          <button className='btn btn-block' onClick={onSubmit}>
+          <button className='btn btn-block' onClick = {() => {validation("phone", phone);if(validation("name", name) != null && validation("phone", phone) != null && validation("password", password) != null) onSubmit()}}>
             Submit
           </button>
         </div>

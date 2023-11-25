@@ -117,7 +117,9 @@ function Customer() {
         <form onSubmit={onSubmit}>
           <div className='form-group'>
             <input
+              required
               type='tel'
+              pattern='[1-9][0-9]{9}'
               className='form-control'
               id='phone'
               value={phone}

@@ -8,6 +8,7 @@ import Owner from './Owner'
 import axios from 'axios'
 import { API_CUST_REGISTER } from '../apis/apis'
 import Header from '../components/Header'
+import validator from 'validator';
 
 function CustomerRegister() {
     const navigate = useNavigate();
@@ -78,6 +79,38 @@ function CustomerRegister() {
             })
         }
     }
+    const validation = (key, value) => {
+      if(key === 'name'){
+        return value.match('[A-Za-z ]{1,32}');
+      }
+      else if(key === 'phone'){
+        return value.match('[1-9][0-9]{9}');
+      }
+      else if(key === 'password'){
+        if(validator.isStrongPassword(value, {
+          minLength: 8, 
+          minLowercase: 1,
+          minUppercase: 1,
+          minNumbers: 1,
+          minSymbols: 1
+        })){
+          return [value];
+        }
+        else{
+          return null;
+        }
+        // if(value.length < 8)
+        //   return null;
+
+        // return value.match('^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$');
+      }
+      else if(key === 'pincode'){
+        if(value.length != 6)
+          return null;
+
+        return value.match('[1-9][0-9]{5}');
+      }
+    }
   return (
     <>
     <Header></Header>
@@ -141,7 +174,7 @@ function CustomerRegister() {
           </div>
         </form>
         <div className='form-group'>
-          <button onClick = {onSubmit} className='btn btn-block'>
+          <button onClick = {() => {validation("phone", phone);if(validation("name", name) != null && validation("phone", phone) != null && validation("pincode", pincode) != null && validation("password", password) != null) onSubmit()}} className='btn btn-block'>
             Submit
           </button>
         </div>
