@@ -30,17 +30,15 @@ public class PropertyController {
         return ResponseEntity.ok(updatedProperty);
     }
 
-    @GetMapping("/get/{pincode}")
-    public ResponseEntity<PropertyDto> searchPropertyforCust(@RequestBody Pincode pincode) {
+    @PostMapping("/getPropCust")
+    public ResponseEntity<List<PropertyDto>> searchPropertyforCust(@RequestBody Pincode pincode) {
         return ResponseEntity.ok(this.propertyService.searchPropertyforCust(pincode.getPincode()));
     }
 
-    @PostMapping("/get/{ownerId}")
+    @GetMapping("/getByOwner/{ownerId}")
     public ResponseEntity<List<PropertyDto>> searchProperty(@PathVariable Integer ownerId) {
         List<PropertyDto> propertyDto = this.propertyService.searchProperty(ownerId);
-        if(propertyDto != null)
-            return ResponseEntity.ok(propertyDto);
-        throw new ResourceNotFoundException("property", "OwnerId", 0);
+        return new ResponseEntity<>(propertyDto, HttpStatus.OK);
     }
 
     @DeleteMapping("/{prop_Id}")

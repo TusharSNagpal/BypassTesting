@@ -26,7 +26,7 @@ public class Property {
     @Column(nullable = false)
     private Integer pincode;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="ownerId")
     private Owner owner;
 }

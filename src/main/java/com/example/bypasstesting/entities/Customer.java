@@ -23,7 +23,7 @@ public class Customer {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String phone;
 
     @Column(nullable = false)
@@ -35,7 +35,7 @@ public class Customer {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany
-    @JoinColumn(name="bookingId")
-    private List<Bookings> bookingsList;
+//    @OneToMany
+//    @JoinColumn(name="bookingId")
+//    private List<Bookings> bookingsList;
 }

@@ -13,7 +13,7 @@ public interface PropertyService {
 
     List<PropertyDto> searchProperty(Integer ownerId);
 
-    PropertyDto searchPropertyforCust(Integer pincode);
+    List<PropertyDto> searchPropertyforCust(Integer pincode);
 
     void deleteProperty(Integer prop_id);
 

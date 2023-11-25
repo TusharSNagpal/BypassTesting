@@ -28,20 +28,20 @@ public class Bookings {
     @Column(nullable = false)
     private String vehicle_reg_no;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private Date in_date;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private Date out_date;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String price;
 
     @ManyToOne
     @JoinColumn(name="customerId")
     private Customer customer;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="prop_id")
     private Property property;
 }

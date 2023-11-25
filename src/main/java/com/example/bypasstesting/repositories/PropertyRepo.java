@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface PropertyRepo extends JpaRepository<Property, Integer> {
-    Property findPropertyByPincode(Integer pincode);
+    List<Property> findPropertyByPincode(Integer pincode);
 
-    @Query(value="SELECT * FROM owner WHERE owner_id=:ownerId",nativeQuery = true)
+    @Query(value="SELECT * FROM properties WHERE owner_id=:ownerId",nativeQuery = true)
     List<Property> findPropertyByOwnerId (Integer ownerId);
 }

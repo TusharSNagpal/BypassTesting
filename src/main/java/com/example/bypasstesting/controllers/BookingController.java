@@ -19,7 +19,7 @@ public class BookingController {
     @Autowired
     BookingService bookingService;
 
-    @PostMapping("/")
+    @PostMapping("/newBooking")
     public ResponseEntity<BookingsDto> newBooking(@RequestBody BookingsDto bookingDto) {
         BookingsDto newBookingDto = this.bookingService.newBooking(bookingDto);
         return new ResponseEntity<>(newBookingDto, HttpStatus.CREATED);
@@ -36,12 +36,10 @@ public class BookingController {
     @PostMapping("/currentBooking")
     public ResponseEntity<List<BookingsDto>> getOngoingBookings(@RequestBody OngoingBooking ongoingBooking){
         List<BookingsDto> bookingsDtoList = bookingService.getOnGoingBooking(ongoingBooking.getCustomerId());
-        if(bookingsDtoList != null)
-            return new ResponseEntity<>(bookingsDtoList, HttpStatus.OK);
-        throw new ResourceNotFoundException("bookings", "getOngoingBooking", 0);
+        return new ResponseEntity<>(bookingsDtoList, HttpStatus.OK);
     }
 
-    @PostMapping("goingOut")
+    @PutMapping("/out")
     public ResponseEntity<BookingsDto> goingOut(@RequestBody OutBooking outBooking){
         BookingsDto out = bookingService.goingOut(outBooking.getBookingId(), outBooking.getPrice());
         if(out != null)
@@ -49,7 +47,7 @@ public class BookingController {
         throw new ResourceNotFoundException("bookings", "goingOut", 0);
     }
 
-    @PostMapping("pastBooking")
+    @PostMapping("/pastBooking")
     public ResponseEntity<List<BookingsDto>> pastBookings(@RequestBody OngoingBooking ongoingBooking){
         List<BookingsDto> bookingsDtoList = bookingService.pastBookings(ongoingBooking.getCustomerId());
         if(bookingsDtoList != null)

@@ -53,9 +53,9 @@ public class PropertyServiceImpl implements PropertyService {
         this.propertyRepo.delete(property);
     }
 
-    public PropertyDto searchPropertyforCust(Integer pincode){
-        Property propertycust = this.propertyRepo.findPropertyByPincode(pincode);
-        return this.modelMapper.map(propertycust, PropertyDto.class);
+    public List<PropertyDto> searchPropertyforCust(Integer pincode){
+        List<Property> propertycust = this.propertyRepo.findPropertyByPincode(pincode);
+        return propertycust.stream().map(properties -> this.modelMapper.map(properties, PropertyDto.class)).collect(Collectors.toList());
     }
 
 }

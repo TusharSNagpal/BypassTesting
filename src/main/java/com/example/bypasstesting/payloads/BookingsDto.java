@@ -17,7 +17,7 @@ import java.util.Date;
 public class BookingsDto {
     private Integer bookingId;
     private String prop_address;
-    private String vehicle_no;
+    private String vehicle_reg_no;
     private Date in_date;
     private Date out_date;
     private String price;
