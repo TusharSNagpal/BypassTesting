@@ -119,3 +119,56 @@ Owner and Properties managed by UTKARSH SHRIVASTAVA <br />
     <td>returns all past bookings that customer has done</td>
   </tr>
 </table> 
+
+**Frontend:**
+- TUSHAR NAGPAL <br />
+<br />
+ <table>
+  <tr>
+    <th>MODULE</th>
+  </tr>
+  <tr>
+    <td>Customer.js</td>
+  </tr>
+  <tr>
+    <td>CustomerRegister.js<td>
+  </tr>
+  <tr>
+    <td>Login.js</td>
+  </tr>
+  <tr>
+    <td>History.js</td>
+  </tr>
+  <tr>
+    <td>Bookings.js</td>
+  </tr>
+  <tr>
+    <td>BookingSlot.js</td>
+  </tr>
+</table> 
+
+- UTKARSH SHRIVASTAVA <br />
+<br />
+ <table>
+  <tr>
+    <th>MODULE</th>
+  </tr>
+  <tr>
+    <td>Owner.js</td>
+  </tr>
+  <tr>
+    <td>Register.js<td>
+  </tr>
+  <tr>
+    <td>OwnerRegister.js</td>
+  </tr>
+  <tr>
+    <td>Dashboard.js</td>
+  </tr>
+  <tr>
+    <td>OwnerProperties.js</td>
+  </tr>
+  <tr>
+    <td>ViewBooking.js</td>
+  </tr>
+</table> 
