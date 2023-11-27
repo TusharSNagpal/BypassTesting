@@ -31,7 +31,7 @@ function HeaderIn({view, pastBookings}) {
                 </p>
             </li>
             <li>
-                <Link to='/customer ' onClick={logout}>
+                <Link id = 'logoutButton' to='/customer ' onClick={logout}>
                     <FaUser /> LOGOUT
                 </Link>
             </li>

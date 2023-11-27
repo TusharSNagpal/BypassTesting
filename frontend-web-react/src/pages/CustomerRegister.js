@@ -125,6 +125,7 @@ function CustomerRegister() {
         <form onSubmit={onSubmit}>
           <div className='form-group'>
             <input
+              id = 'name'
               type='text'
               className='form-control'
               placeholder='Enter your name'
@@ -133,6 +134,7 @@ function CustomerRegister() {
           </div>
           <div className='form-group'>
             <input
+              id = 'phone'
               type='tel'
               className='form-control'
               placeholder='Enter your phone number'
@@ -141,6 +143,7 @@ function CustomerRegister() {
           </div>
           <div className='form-group'>
             <input
+              id = 'address'
               type='text'
               className='form-control'
               placeholder='Enter your address'
@@ -149,6 +152,7 @@ function CustomerRegister() {
           </div>
           <div className='form-group'>
             <input
+              id = 'pincode'
               type='text'
               className='form-control'
               placeholder='Enter your pincode'
@@ -157,6 +161,7 @@ function CustomerRegister() {
           </div>
           <div className='form-group'>
             <input
+              id = 'password'
               type='password'
               className='form-control'
               placeholder='Enter password'
@@ -166,6 +171,7 @@ function CustomerRegister() {
 
           <div className='form-group'>
             <input
+              id = 'password1'
               type='password'
               className='form-control'
               placeholder='Re-enter password'
@@ -174,7 +180,7 @@ function CustomerRegister() {
           </div>
         </form>
         <div className='form-group'>
-          <button onClick = {() => {validation("phone", phone);if(validation("name", name) != null && validation("phone", phone) != null && validation("pincode", pincode) != null && validation("password", password) != null) onSubmit()}} className='btn btn-block'>
+          <button id = 'registerButton' onClick = {() => {validation("phone", phone);if(validation("name", name) != null && validation("phone", phone) != null && validation("pincode", pincode) != null && validation("password", password) != null) onSubmit()}} className='btn btn-block'>
             Submit
           </button>
         </div>

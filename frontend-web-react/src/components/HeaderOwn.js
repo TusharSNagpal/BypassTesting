@@ -17,7 +17,7 @@ function HeaderOwn() {
                 OWNER
             </li>
             <li>
-                <Link to='/owner ' onClick={logout}>
+                <Link id = 'logoutButton' to='/owner ' onClick={logout}>
                     <FaUser /> LOGOUT
                 </Link>
             </li>

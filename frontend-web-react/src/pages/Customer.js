@@ -73,6 +73,7 @@ function Customer() {
             }
             else{
               console.log('Wrong Id or Password')
+              setLoading(false);
               alert('Incorrect Phone Number/Password');
               return null;
             }
@@ -139,7 +140,7 @@ function Customer() {
             />
           </div>
           <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
+            <button id = 'loginButton' type='submit' className='btn btn-block'>
               Submit
             </button>
           </div>

@@ -114,7 +114,7 @@ function Owner() {
           </div>
 
           <div className='form-group'>
-            <button type='submit' className='btn btn-block' onClick={onSubmit}>
+            <button id = 'loginButton'type='submit' className='btn btn-block' onClick={onSubmit}>
               Submit
             </button>
           </div>
