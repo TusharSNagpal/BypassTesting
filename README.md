@@ -38,20 +38,22 @@ Customer and Bookings managed by TUSHAR NAGPAL.<br />
 Owner and Properties managed by UTKARSH SHRIVASTAVA <br />
 
 **Backend:**
+- TUSHAR NAGPAL <br />
 <br />
  <table>
   <tr>
-    <th>CONTRIBUTOR NAME</th>
     <th>API</th>
     <th>API DESCRIPTION</th>
   </tr>
   <tr>
-    <td>TUSHAR NAGPAL<td>
     <td>/api/customers/</td>
     <td>register new customer</td>
   </tr>
   <tr>
-    <td>TUSHAR NAGPAL<td>
+    <td>/api/customers/login</td>
+    <td>customer login using phone and password</td>
+  </tr>
+  <tr>
     <td>/api/customers/login</td>
     <td>customer login using phone and password</td>
   </tr>
