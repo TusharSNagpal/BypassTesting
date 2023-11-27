@@ -54,7 +54,27 @@ Owner and Properties managed by UTKARSH SHRIVASTAVA <br />
     <td>customer login using phone and password</td>
   </tr>
   <tr>
-    <td>/api/customers/login</td>
-    <td>customer login using phone and password</td>
+    <td>/api/customers/getCustomer</td>
+    <td>returns customer details by taking phone</td>
+  </tr>
+  <tr>
+    <td>/api/bookings/newBooking</td>
+    <td>books slot for a customer</td>
+  </tr>
+  <tr>
+    <td>/api/bookings/get</td>
+    <td>retrieves bookings by taking vehicle registration number</td>
+  </tr>
+  <tr>
+    <td>/api/bookings/currentBooking</td>
+    <td>returns the list of ongoing bookings</td>
+  </tr>
+  <tr>
+    <td>/api/bookings/out</td>
+    <td>takes remaining payment and marks the booking as done by filling out-date</td>
+  </tr>
+  <tr>
+    <td>/api/bookings/pastBooking</td>
+    <td>returns all past bookings that customer has done</td>
   </tr>
 </table> 
