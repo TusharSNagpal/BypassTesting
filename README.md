@@ -39,7 +39,6 @@ Owner and Properties managed by UTKARSH SHRIVASTAVA <br />
 
 **Backend:**
 - TUSHAR NAGPAL <br />
-<br />
  <table>
   <tr>
     <th>API</th>
@@ -80,7 +79,6 @@ Owner and Properties managed by UTKARSH SHRIVASTAVA <br />
 </table> 
 
 - UTKARSH SHRIVASTAVA <br />
-<br />
  <table>
   <tr>
     <th>API</th>
@@ -122,7 +120,6 @@ Owner and Properties managed by UTKARSH SHRIVASTAVA <br />
 
 **Frontend:**
 - **TUSHAR NAGPAL** <br />
-<br />
  <table>
   <tr>
     <th>MODULE</th>
@@ -148,7 +145,6 @@ Owner and Properties managed by UTKARSH SHRIVASTAVA <br />
 </table> 
 
 - **UTKARSH SHRIVASTAVA** <br />
-<br />
  <table>
   <tr>
     <th>MODULE</th>
