@@ -78,3 +78,44 @@ Owner and Properties managed by UTKARSH SHRIVASTAVA <br />
     <td>returns all past bookings that customer has done</td>
   </tr>
 </table> 
+
+- UTKARSH SHRIVASTAVA <br />
+<br />
+ <table>
+  <tr>
+    <th>API</th>
+    <th>API DESCRIPTION</th>
+  </tr>
+  <tr>
+    <td>/api/owner/</td>
+    <td>register new owner</td>
+  </tr>
+  <tr>
+    <td>/api/owner/login</td>
+    <td>owner login using phone and password</td>
+  </tr>
+  <tr>
+    <td>/api/owner/getOwner/{phone}</td>
+    <td>returns owner details by taking phone</td>
+  </tr>
+  <tr>
+    <td>/api/properties/</td>
+    <td>registers new property under a particular owner</td>
+  </tr>
+  <tr>
+    <td>/api/properties/update</td>
+    <td>modifications in already registered property details</td>
+  </tr>
+  <tr>
+    <td>/api/properties/getPropCust</td>
+    <td>returns list of properties in a particular area with pincode given</td>
+  </tr>
+  <tr>
+    <td>/api/properties/getByOwner/{ownerId}</td>
+    <td>returns properties registered under a particular owner</td>
+  </tr>
+  <tr>
+    <td>/api/bookings/pastBooking</td>
+    <td>returns all past bookings that customer has done</td>
+  </tr>
+</table> 
