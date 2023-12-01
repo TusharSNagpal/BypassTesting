@@ -33,6 +33,7 @@ public class OwnerRegisterTest {
         while (elapsedTime < 1*2*1000) {
             elapsedTime = (new Date()).getTime() - startTime;
         }
+        driver.switchTo().alert().accept();
         String actualUrl="http://localhost:3000/owner";
         String expectedUrl= driver.getCurrentUrl();
         Assert.assertEquals(expectedUrl,actualUrl);
