@@ -33,6 +33,8 @@ public class BookingServiceImpl implements BookingService {
 //        System.out.println(bookingsDto.getv());
         Bookings createBooking = this.bookingsRepo.save(bookings);
         Property property = this.propertyRepo.findById(bookings.getProperty().getProp_id()).orElseThrow(() -> new ResourceNotFoundException("Booking", "Property", 0));
+        if(property.getSlots() == 0)
+            throw new ResourceNotFoundException("Booking", "Property", 0);
         property.setSlots(property.getSlots()-1);
         this.propertyRepo.save(property);
         return this.modelMapper.map(createBooking, BookingsDto.class);
@@ -67,6 +69,9 @@ public class BookingServiceImpl implements BookingService {
         booking.setPrice(price);
         booking.setOut_date(new Date());
         Bookings updatedBooking = this.bookingsRepo.save(booking);
+        Property property = booking.getProperty();
+        property.setSlots(property.getSlots() + 1);
+        this.propertyRepo.save(property);
         return this.modelMapper.map(updatedBooking, BookingsDto.class);
     }
 

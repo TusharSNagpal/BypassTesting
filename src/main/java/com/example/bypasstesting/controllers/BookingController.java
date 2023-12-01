@@ -1,10 +1,12 @@
 package com.example.bypasstesting.controllers;
 
 import com.example.bypasstesting.entities.Bookings;
+import com.example.bypasstesting.entities.Property;
 import com.example.bypasstesting.exceptions.ResourceNotFoundException;
 import com.example.bypasstesting.payloads.*;
 import com.example.bypasstesting.services.BookingService;
 import com.example.bypasstesting.services.CustomerService;
+import com.example.bypasstesting.services.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

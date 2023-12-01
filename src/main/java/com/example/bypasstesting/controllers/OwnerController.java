@@ -37,4 +37,5 @@ public class OwnerController {
     public ResponseEntity<OwnerDto> getOwner(@PathVariable String phone) {
         return ResponseEntity.ok(this.ownerService.getOwnerByPhone(phone));
     }
+
 }
