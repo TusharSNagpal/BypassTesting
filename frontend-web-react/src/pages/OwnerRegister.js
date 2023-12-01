@@ -105,6 +105,7 @@ function OwnerRegister() {
         <form>
           <div className='form-group'>
             <input
+                id = "name"
               type='text'
               className='form-control'
               placeholder='Enter your name'
@@ -113,6 +114,7 @@ function OwnerRegister() {
           </div>
           <div className='form-group'>
             <input
+                id = "phone"
               type='tel'
               className='form-control'
               placeholder='Enter your phone number'
@@ -121,6 +123,7 @@ function OwnerRegister() {
           </div>
           <div className='form-group'>
             <input
+                id = "address"
               type='text'
               className='form-control'
               placeholder='Enter your address'
@@ -129,6 +132,7 @@ function OwnerRegister() {
           </div>
           <div className='form-group'>
             <input
+                id = "password"
               type='password'
               className='form-control'
               placeholder='Enter password'
@@ -138,6 +142,7 @@ function OwnerRegister() {
 
           <div className='form-group'>
             <input
+                id = "password1"
               type='password'
               className='form-control'
               placeholder='Re-enter password'
@@ -146,7 +151,7 @@ function OwnerRegister() {
           </div>
         </form>
         <div className='form-group'>
-          <button className='btn btn-block' onClick = {() => {validation("phone", phone);if(validation("name", name) != null && validation("phone", phone) != null && validation("password", password) != null) onSubmit()}}>
+          <button id = "registerButton" className='btn btn-block' onClick = {() => {validation("phone", phone);if(validation("name", name) != null && validation("phone", phone) != null && validation("password", password) != null) onSubmit()}}>
             Submit
           </button>
         </div>
